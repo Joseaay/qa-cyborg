@@ -96,10 +96,12 @@ export = (app: Application) => {
                     context: contextMessage
                 })
             );
-            const issueComment = context.issue({
-                body: `🦾  **${contextMessage}** - Our wonderful QA team has approved this PR! 🍻`
-            });
-            await context.github.issues.createComment(issueComment);
+            if (state === "success") {
+                const issueComment = context.issue({
+                    body: `🦾  **${contextMessage}** - Our wonderful QA team has approved this PR! 🍻`
+                });
+                await context.github.issues.createComment(issueComment);
+            }
         }
     });
 };
