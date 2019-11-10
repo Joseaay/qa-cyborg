@@ -4,9 +4,9 @@
     "description": "A GitHub bot APP for blocking PRs until QA has been passed and approved",
     "author": "Jose Ant. Ayllon <joseayllonllamas@hotmail.com>",
     "license": "ISC",
-    "repository": "https://github.com//block-until-qa.git",
-    "homepage": "https://github.com//block-until-qa",
-    "bugs": "https://github.com//block-until-qa/issues",
+    "repository": "https://github.com/Joseaay/qa-cyborg.git",
+    "homepage": "https://github.com/Joseaay/qa-cyborg",
+    "bugs": "https://github.com/Joseaay/qa-cyborg/issues",
     "keywords": [
         "probot",
         "github",
