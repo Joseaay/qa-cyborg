@@ -1,0 +1,9 @@
+qa_rewiewers:
+    - Joseaay
+target_url: https://github.com/settings/apps/joseaay-probotapp-test
+messages:
+    descriptions:
+        success: This PR has passed QA successfully
+        failure: This PR has failed QA
+        pending: This PR hasen't been yet approved by the QA team
+    context: QA Cyborg
