@@ -1,3 +1,5 @@
+[![Build Status][travis-image]][travis-url]
+
 # qa-cyborg
 
 ## Setup
@@ -22,3 +24,6 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## License
 
 [ISC](LICENSE) © 2019 Jose Ant. Ayllon <joseayllonllamas@hotmail.com>
+
+[travis-image]: https://travis-ci.com/Joseaay/qa-cyborg.svg?branch=master
+[travis-url]: https://travis-ci.com/Joseaay/qa-cyborg
