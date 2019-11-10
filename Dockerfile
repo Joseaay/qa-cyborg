@@ -20,6 +20,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-COPY .env ./
-
-ENTRYPOINT [ "npm", "start" ]
+CMD ["npm", "start"]
