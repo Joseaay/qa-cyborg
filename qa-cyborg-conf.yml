@@ -1,6 +1,6 @@
 qa_rewiewers:
     - MichelleJarvis12
-target_url: https://github.com/settings/apps/joseaay-probotapp-test
+target_url: https://github.com/settings/apps/qa-cyborg
 messages:
     descriptions:
         success: This PR has passed QA successfully
