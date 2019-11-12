@@ -62,16 +62,19 @@ export = (app: Application) => {
     app.log(
       `\n📩  [EVENT] -- PR '${context.payload.pull_request.html_url}' has had a review.\n`
     );
-    app.log(`\n🛠  [ACTION] -- Checking review state...\n`);
-
+    app.log(
+      `\n🛠  [ACTION] -- Checking if review user is a QA reviewer...\n`
+    );
     const isReviewerQa = qa_rewiewers.includes(
       context.payload.review.user.login
     );
+
     !!isReviewerQa
       ? app.log(`\n✅ [ACTION] -- Review user is a QA user!\n`)
       : app.log(`\n⛔️  [ACTION] -- Review user is not a QA user!\n`);
 
     if (!!isReviewerQa) {
+      app.log(`\n🛠  [ACTION] -- Checking review state...\n`);
       const reviewState = context.payload.review.state;
       const isReviewStateApproved = reviewState === "approved";
       !!isReviewStateApproved
@@ -79,9 +82,6 @@ export = (app: Application) => {
         : app.log(
           `\n⛔️  [ACTION] -- Review state is not an APPROVAL!\n`
         );
-      app.log(
-        `\n🛠  [ACTION] -- Checking if review user is a QA reviewer...\n`
-      );
 
       const state: StatusType =
         (isReviewerQa &&
