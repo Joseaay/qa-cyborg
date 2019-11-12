@@ -1,4 +1,3 @@
-require('newrelic');
 import { Application } from "probot";
 import yaml from "js-yaml";
 import fs from "fs";
