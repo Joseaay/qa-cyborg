@@ -38,20 +38,24 @@ export = (app: Application) => {
     );
   });
 
-  app.on("pull_request.edited", async context => {
+  app.on("pull_request.synchronize", async context => {
     app.log(
-      `\n📩  [EVENT] -- PR '${context.payload.pull_request.html_url}' has been committed.\n`
+      `\n📩  [EVENT] -- The PR '${
+      context.payload.pull_request.html_url
+      }' has been pushed with the commit: '${
+      context.payload.pull_request.title
+      }'.\n`
     );
-    app.log(`\n🛠  [ACTION] -- PAYLOAD: ${context.payload}.\n`);
-    // context.github.repos.createStatus(
-    //   context.repo({
-    //     sha: context.payload.pull_request.head.sha,
-    //     state: "pending",
-    //     target_url,
-    //     description: pendingMessage,
-    //     context: contextMessage
-    //   })
-    // );
+    app.log(`\n🛠  [ACTION] -- Setting PR check status as pending.\n`);
+    context.github.repos.createStatus(
+      context.repo({
+        sha: context.payload.pull_request.head.sha,
+        state: "pending",
+        target_url,
+        description: pendingMessage,
+        context: contextMessage
+      })
+    );
   });
 
   app.on("pull_request_review", async context => {
