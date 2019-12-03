@@ -5,5 +5,5 @@ messages:
     descriptions:
         success: This PR has passed QA successfully
         failure: This PR has failed QA
-        pending: This PR hasen't been yet approved by the QA team
+        pending: This PR hasn't been yet approved by the QA team
     context: QA Cyborg
